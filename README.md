@@ -27,3 +27,27 @@ FurryHub is a full-stack web application designed for the furry community, combi
 ### Installation
 
 #### Clone the repository
+
+
+#### Backend setup
+Build and run Spring Boot backend:
+
+
+#### Frontend setup
+Navigate to frontend folder if separate, install dependencies, and run React app for development:
+
+### Production build & deployment
+
+1. Create optimized React production build
+2. Copy the React production build files into Spring Boot static resources folder:
+
+## Contributing
+Contributions are welcome! Please fork the repository, create feature branches, and submit pull requests. Ensure code quality and pass existing tests.
+
+## Contact
+For questions or support, please open issues in GitHub repository or contact the maintainers.
+
+---
+
+*FurryHub Application is inspired by the vision and community focus of [www.furryhub.in](https://www.furryhub.in), a platform advancing furry art and collaboration.*
+
