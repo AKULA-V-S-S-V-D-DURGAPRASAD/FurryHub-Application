@@ -1,0 +1,91 @@
+/* Reset & base */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, #fff 0%, #f7fbff 40%, #f6f8fc 100%);
+  color: #0f172a;
+}
+
+/* Layout helpers */
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 20px; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 960px){ .grid-2,.grid-3{ grid-template-columns: 1fr; } }
+
+/* Cards & surfaces */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  padding: 18px;
+}
+.glass {
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: rgba(255,255,255,0.6);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; font-weight: 700; border-radius: 12px;
+  padding: 10px 14px; border: 1px solid transparent; cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:active { transform: translateY(1px) }
+.btn-primary { background: #ff8a00; color: #fff; box-shadow: 0 8px 20px rgba(255,138,0,.25); }
+.btn-primary:hover { background:#ff7a00 }
+.btn-ghost { background: #fff; border-color: #e6eef8; color:#0f172a }
+.btn-danger { background: #ef4444; color:#fff }
+
+/* Inputs */
+.input, .select, .textarea {
+  width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e6eef8; background: #fff;
+  outline: none; transition: box-shadow .2s ease, border .2s ease;
+}
+.input:focus, .select:focus, .textarea:focus { border-color: #93c5fd; box-shadow: 0 0 0 4px rgba(147,197,253,.25) }
+.textarea { min-height: 100px; resize: vertical }
+
+/* Navbar */
+.navbar { position: sticky; top: 0; z-index: 40; }
+.nav-inner { display:flex; align-items:center; justify-content: space-between; padding: 10px 0; }
+.brand { display:flex; align-items:center; gap: 10px; }
+.brand-badge { width: 48px; height: 48px; border-radius: 14px; background: #ff8a00; color:#fff; font-weight: 900; display:flex; align-items:center; justify-content:center; }
+.nav-links { display:flex; align-items:center; gap: 14px; }
+.nav-link { color:#0f172a; font-weight:700; text-decoration:none; padding:8px 10px; border-radius: 10px; }
+.nav-link.active, .nav-link:hover { background: #fff; box-shadow: 0 6px 20px rgba(15,23,42,.06) }
+
+/* Hero */
+.hero {
+  display:grid; grid-template-columns: 1.2fr .8fr; gap: 22px; align-items:center; margin-top: 16px;
+}
+.hero-title { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; font-weight: 900; letter-spacing: -0.02em; }
+.hero-sub { color: #475569; margin-top: 10px; font-size: 16px; }
+.hero-cta { display:flex; gap: 10px; margin-top: 16px; }
+
+/* Services */
+.service {
+  display:flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 14px; background:#fff;
+  box-shadow: 0 12px 28px rgba(2,6,23,0.06); transition: transform .12s ease, box-shadow .2s ease;
+}
+.service:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(2,6,23,0.1) }
+.service-title { font-weight: 800 }
+.service-desc { color:#64748b }
+
+/* Status pill */
+.pill { display:inline-flex; align-items:center; gap:6px; padding: 6px 10px; border-radius: 9999px; font-weight: 700; font-size: 12px }
+.pill.sch { background: #eef2ff; color:#4338ca }
+.pill.prog { background: #ecfeff; color:#0e7490 }
+.pill.done { background: #ecfdf5; color:#047857 }
+
+/* Animations */
+@keyframes floaty { from { transform: translateY(0) } to { transform: translateY(-6px) } }
+.floaty { animation: floaty 2.2s ease-in-out infinite alternate; }
+
+/* Utilities */
+.section-title { font-weight: 900; letter-spacing: -0.02em; margin: 18px 0 10px; }
+.center { display:flex; align-items:center; justify-content:center }
+.hidden-mobile { display: inline-flex; }
+@media (max-width: 960px){ .hero{ grid-template-columns: 1fr } .hidden-mobile{ display:none } }
